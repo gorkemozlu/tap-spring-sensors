@@ -13,6 +13,7 @@ metadata:
     tanzu.app.live.view.application.flavours: spring-boot
     tanzu.app.live.view.application.name: spring-sensors-publisher
   name: spring-sensors-publisher
+  namespace: dev
 spec:
   selector:
     matchLabels:
@@ -41,7 +42,7 @@ spec:
           value: /bindings
         - name: PORT
           value: "8080"
-        image: dev.local/spring-sensors-publisher:latest
+        image: harbor.dorn.gorke.ml/tap/spring-sensors-publisher:latest
         imagePullPolicy: IfNotPresent
         name: workload
         ports:
